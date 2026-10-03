@@ -1,0 +1,24 @@
+<includeonly>{| class="navbox"
+|-
+| class="navbox-title" | [[:Category:Races|Races of Eorzea]]
+|-
+! class="navbox-group" | [[Hyur]]
+| class="navbox-list" | <ul><li>[[Midlander]]</li><li>[[Highlander]]</li></ul>
+|-
+! class="navbox-group" | [[Elezen]]
+| class="navbox-list" | <ul><li>[[Wildwood]]</li><li>[[Duskwight]]</li></ul>
+|-
+! class="navbox-group" | [[Lalafell]]
+| class="navbox-list" | <ul><li>[[Plainsfolk]]</li><li>[[Dunesfolk]]</li></ul>
+|-
+! class="navbox-group" | [[Miqo'te]]
+| class="navbox-list" | <ul><li>[[Seekers of the Sun]]</li><li>[[Keepers of the Moon]]</li></ul>
+|-
+! class="navbox-group" | [[Roegadyn]]
+| class="navbox-list" | <ul><li>[[Sea Wolves]]</li><li>[[Hellsguard]]</li></ul>
+|}</includeonly><noinclude>
+== Usage ==
+
+Use <code><nowiki>{{Races}}</nowiki></code> for links to Eorzea's races and
+clans. Place it at the end of each race or clan page, above its categories.
+</noinclude>

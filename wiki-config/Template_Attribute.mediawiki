@@ -1,0 +1,40 @@
+<includeonly>{| class="infobox-card infobox-attribute"
+|-
+{{#if:{{{abbreviation|}}}|
+!class="infobox-card-header"{{!}} Short form
+{{!}}class="infobox-card-field"{{!}} {{{abbreviation}}}}}
+|-
+{{#if:{{{group|}}}|
+!class="infobox-card-header"{{!}} Group
+{{!}}class="infobox-card-field"{{!}} {{{group}}}}}
+|-
+{{#if:{{{equipment|}}}|
+!class="infobox-card-header"{{!}} Equipment Count
+{{!}}class="infobox-card-field"{{!}} {{{equipment}}}}}
+|-
+{{#if:{{{materia|}}}|
+!class="infobox-card-header"{{!}} Materia Count
+{{!}}class="infobox-card-field"{{!}} {{{materia}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Place this infobox at the start of an attribute page. It covers the six
+attributes raised directly by the player and the derived ratings granted by
+gear. All fields are optional. The styling matches [[Template:Action]] and
+[[Template:Status Effect]].
+
+<pre>
+{{Attribute
+| abbreviation =
+| group =
+| equipment =
+| materia =
+}}
+</pre>
+
+* <code>abbreviation</code>: the short form used in menus and tooltips, such as STR, VIT, or DEX. Leave it blank if the game uses the full name.
+* <code>group</code>: the attribute's section in the character sheet, matching the groups on [[:Category:Attributes|Attributes]].
+* <code>equipment</code>: the number of gear pieces that grant the attribute, counted from the client's equipment table. This is a count, not an item list.
+* <code>materia</code>: the number of materia that raise the attribute, counted from the client's materia table. Count each materia once, regardless of grade.
+</noinclude>

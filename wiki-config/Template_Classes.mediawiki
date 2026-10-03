@@ -1,0 +1,29 @@
+<includeonly>{| class="navbox"
+|-
+| class="navbox-title" | Class/Job
+|-
+! class="navbox-group" | Disciples of War
+| class="navbox-list" | <ul><li>[[Gladiator]]</li><li>[[Pugilist]]</li><li>[[Marauder]]</li><li>[[Lancer]]</li><li>[[Archer]]</li></ul>
+|-
+! class="navbox-group" | Disciples of Magic
+| class="navbox-list" | <ul><li>[[Thaumaturge]]</li><li>[[Conjurer]]</li></ul>
+|-
+! class="navbox-group" | Disciples of the Hand
+| class="navbox-list" | <ul><li>[[Alchemist]]</li><li>[[Armorer]]</li><li>[[Blacksmith]]</li><li>[[Carpenter]]</li><li>[[Culinarian]]</li><li>[[Goldsmith]]</li><li>[[Leatherworker]]</li><li>[[Weaver]]</li></ul>
+|-
+! class="navbox-group" | Disciples of the Land
+| class="navbox-list" | <ul><li>[[Botanist]]</li><li>[[Fisher]]</li><li>[[Miner]]</li></ul>
+|-
+! class="navbox-group" | Jobs
+| class="navbox-list" | <ul><li>[[Paladin]]</li><li>[[Monk]]</li><li>[[Warrior]]</li><li>[[Dragoon]]</li><li>[[Bard]]</li><li>[[Black Mage]]</li><li>[[White Mage]]</li></ul>
+|-
+! class="navbox-group" | See also
+| class="navbox-list" | <ul><li>[[:Category:Class Quests|Class Quests]]</li><li>[[:Category:Job Quests|Job Quests]]</li></ul>
+|}</includeonly><noinclude>
+== Usage ==
+
+This box links the eighteen classes and seven jobs, grouped by Discipline.
+Place <code><nowiki>{{Classes}}</nowiki></code> at the end of each class or
+job page, above its categories. The title is plain text because the box
+already appears on the pages it would link to.
+</noinclude>

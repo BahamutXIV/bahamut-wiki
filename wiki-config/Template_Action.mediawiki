@@ -1,0 +1,141 @@
+<includeonly>{| class="infobox-card"
+{{#if:{{{icon|}}}|{{!}}-
+{{!}} colspan="2" class="infobox-card-icon" {{!}} [[File:XIVL_{{{icon}}}.png|64px|link=|{{PAGENAME}}]]}}
+|-
+{{#if:{{{classes|}}}|
+!class="infobox-card-header"{{!}} Classes
+{{!}}class="infobox-card-field"{{!}} {{{classes}}}}}
+|-
+{{#if:{{{level|}}}|
+!class="infobox-card-header"{{!}} Level
+{{!}}class="infobox-card-field"{{!}} {{{level}}}}}
+|-
+{{#if:{{{cost|}}}|
+!class="infobox-card-header"{{!}} Cost
+{{!}}class="infobox-card-field"{{!}} {{{cost}}}}}
+|-
+{{#if:{{{cast|}}}|
+!class="infobox-card-header"{{!}} Cast
+{{!}}class="infobox-card-field"{{!}} {{{cast}}} seconds}}
+|-
+{{#if:{{{recast|}}}|
+!class="infobox-card-header"{{!}} Recast
+{{!}}class="infobox-card-field"{{!}} {{{recast}}} seconds}}
+|-
+{{#if:{{{range|}}}|
+!class="infobox-card-header"{{!}} Range
+{{!}}class="infobox-card-field"{{!}} {{{range}}} yalms}}
+|-
+{{#if:{{{radius|}}}|
+!class="infobox-card-header"{{!}} Effect Radius
+{{!}}class="infobox-card-field"{{!}} {{{radius}}} yalms}}
+|-
+{{#if:{{{damageclass|}}}|
+!class="infobox-card-header"{{!}} Damage Class
+{{!}}class="infobox-card-field"{{!}} {{{damageclass}}}}}
+|-
+{{#if:{{{attacktype|}}}|
+!class="infobox-card-header"{{!}} Attack Type
+{{!}}class="infobox-card-field"{{!}} {{{attacktype}}}}}
+|-
+{{#if:{{{element|}}}|
+!class="infobox-card-header"{{!}} Element
+{{!}}class="infobox-card-field"{{!}} {{{element}}}}}
+|-
+{{#if:{{{target|}}}|
+!class="infobox-card-header"{{!}} Target
+{{!}}class="infobox-card-field"{{!}} {{{target}}}}}
+|-
+{{#if:{{{aoe|}}}|
+!class="infobox-card-header"{{!}} Area of Effect
+{{!}}class="infobox-card-field"{{!}} {{{aoe}}}}}
+|-
+{{#if:{{{castbar|}}}|
+!class="infobox-card-header"{{!}} Cast Bar
+{{!}}class="infobox-card-field"{{!}} {{{castbar}}}}}
+|-
+{{#if:{{{damage|}}}|
+!class="infobox-card-header"{{!}} Deals Damage
+{{!}}class="infobox-card-field"{{!}} {{{damage}}}}}
+|-
+{{#if:{{{interruptible|}}}|
+!class="infobox-card-header"{{!}} Interruptible
+{{!}}class="infobox-card-field"{{!}} {{{interruptible}}}}}
+|-
+{{#if:{{{status|}}}|
+!class="infobox-card-header"{{!}} Status Effect
+{{!}}class="infobox-card-field"{{!}} {{{status}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Use this infobox at the start of an ability, spell, or weaponskill page. It
+matches the style of [[Template:Item]] and [[Template:Mob]]. All fields are
+optional. Blank fields hide their rows and mean unknown, not zero.
+
+<pre>
+{{Action
+| icon =
+| classes =
+| level =
+| cost =
+| cast =
+| recast =
+| range =
+| radius =
+| damageclass =
+| attacktype =
+| element =
+| target =
+| aoe =
+| castbar =
+| damage =
+| interruptible =
+| status =
+}}
+</pre>
+
+<code>icon</code> is the action's client icon ID. It selects the uploaded image
+<code>File:XIVL_&lt;id&gt;.png</code>.
+
+Include the unit in <code>cost</code>, such as "60 MP" or "1000 TP". Actions
+can spend MP, TP, or HP, while some have no cost. Enter only numbers for
+<code>cast</code>, <code>recast</code>, <code>range</code>, and
+<code>radius</code>. The template adds their units. Range is the maximum
+distance to the target. Radius describes the area around it.
+
+<code>damageclass</code> identifies physical or magical damage.
+<code>attacktype</code> identifies Slashing, Piercing, or Blunt damage.
+<code>element</code> gives the elemental type. An action usually has an attack
+type or an element, rarely both.
+
+== Monster actions ==
+
+Use <code>aoe</code>, <code>castbar</code>, <code>damage</code>,
+<code>interruptible</code>, and <code>status</code> only on monster action
+pages. These describe observed behavior that the client tables do not record.
+
+* <code>aoe</code>: the effect's shape, such as "frontal cone" or "donut/ring AoE". Radius alone does not describe its shape.
+* <code>castbar</code>: the cast bar's color. Red indicates damage, Purple a debuff, Yellow a buff, and Blue a special action.
+* <code>interruptible</code>: whether stunning the caster stops the action.
+* <code>status</code>: the status effect the action applies.
+
+Use <code>damage</code> only when neither <code>damageclass</code> nor the cast
+bar indicates whether the action deals damage. Omit it when another row
+already answers that question.
+
+== Numbered tiers ==
+
+A 1.x action upgrades through tiers under the same action. Cure has nine tiers,
+Protect has seven, and 170 of the 476 actions have at least two. Keep the tiers
+on one page: describe the base action in the infobox and list its tiers in a
+table below it.
+
+<pre>
+{| class="xiv-table altrow-blue wide-table"
+! Tier !! Level !! Cost !! Recast
+|-
+| Cure || 4 || 24 MP || 2.5
+|}
+</pre>
+</noinclude>

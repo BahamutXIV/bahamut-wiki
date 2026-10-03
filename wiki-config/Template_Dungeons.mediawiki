@@ -1,0 +1,15 @@
+<includeonly>{| class="navbox"
+|-
+| class="navbox-title" | [[:Category:Dungeons|Dungeons of Eorzea]]
+|-
+! class="navbox-group" | Sealed trials
+| class="navbox-list" | <ul><li>[[Dzemael Darkhold]]</li><li>[[Aurum Vale]]</li><li>[[Cutter's Cry]]</li><li>[[The Thousand Maws of Toto-Rak]]</li></ul>
+|-
+! class="navbox-group" | Open delves
+| class="navbox-list" | <ul><li>[[Copperbell Mines]]</li><li>[[Nanawa Mines]]</li><li>[[The Tam-Tara Deepcroft]]</li><li>[[The Mun-Tuy Cellars]]</li><li>[[Mistbeard Cove]]</li><li>[[Cassiopeia Hollow]]</li><li>[[U'Ghamaro Mines]]</li><li>[[Shposhae]]</li></ul>
+|}</includeonly><noinclude>
+== Usage ==
+
+Use <code><nowiki>{{Dungeons}}</nowiki></code> for links to Eorzea's dungeons.
+Place it at the end of each dungeon page, above its categories.
+</noinclude>

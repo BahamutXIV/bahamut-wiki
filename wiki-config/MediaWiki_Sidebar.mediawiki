@@ -1,0 +1,22 @@
+* navigation
+** mainpage|mainpage-description
+** Special:RecentChanges|Recent changes
+** Special:Random|Random page
+** Special:SpecialPages|Special pages
+
+* Content
+** :Category:Classes|Classes
+** :Category:Jobs|Jobs
+** :Category:Quests|Quests
+** :Category:Items|Items
+** :Category:Crafting|Crafting
+** :Category:Gathering|Gathering
+** :Category:Dungeons|Dungeons
+** Trials|Trials
+** :Category:Bestiary|Bestiary
+
+* World
+** :Category:City-States|City States
+** :Category:Zones|Zones
+** :Category:NPCs|NPCs
+** :Category:Deities|Deities

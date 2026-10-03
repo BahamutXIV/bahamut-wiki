@@ -1,0 +1,33 @@
+# AI agents
+.claude/
+.agents/
+AGENTS.md
+CLAUDE.md
+docs/ai_agents/local/
+
+# Local wiki authoring
+publish-ready/
+tools/local/
+tools/ge-cache/
+tools/client-items/
+tools/action-roster/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Python state
+.venv/
+__pycache__/
+*.pyc
+
+# Logs / scratch
+logs/
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,55 @@
+<includeonly><div class="quest-summary">
+{| class="infobox-quest"
+|-
+{{#if:{{{type|}}}|
+! width="100px" class="infobox-quest-header"{{!}} Type
+{{!}}class="infobox-quest-field"{{!}} {{{type}}}}}
+|-
+{{#if:{{{startnpc|}}}|
+!class="infobox-quest-header"{{!}} Start NPC
+{{!}}class="infobox-quest-field"{{!}} {{{startnpc}}}}}
+|-
+{{#if:{{{requirements|}}}|
+!class="infobox-quest-header"{{!}} Requirements
+{{!}}class="infobox-quest-field"{{!}} {{{requirements}}}}}
+|-
+{{#if:{{{items|}}}|
+!class="infobox-quest-header"{{!}} Items Needed
+{{!}}class="infobox-quest-field"{{!}} {{{items}}}}}
+|-
+{{#if:{{{reward|}}}|
+!class="infobox-quest-header"{{!}} Reward
+{{!}}class="infobox-quest-field"{{!}} {{{reward}}}}}
+|}
+{{#if:{{{previous|}}}{{{next|}}}|
+{{{!}} class="infobox-quest"
+{{!}}- class="infobox-quest-header"
+!width="50%" style="text-align:left;"{{!}} &larr; Previous Quest {{!}}{{!}} Next Quest &rarr;
+{{!}}- class="infobox-quest-field"
+{{!}} {{#if:{{{previous|}}}|{{{previous}}}|''None''}}
+{{!}}style="text-align:right"{{!}} {{#if:{{{next|}}}|{{{next}}}|''None''}}
+{{!}}}
+}}
+</div>
+</includeonly><noinclude>
+== Usage ==
+
+Place this infobox at the start of a quest page. Navigation to the previous
+and next quests follows the summary. All fields are optional, and blank
+fields hide their rows.
+
+<pre>
+{{Quest
+| type =
+| startnpc =
+| requirements =
+| items =
+| reward =
+| previous =
+| next =
+}}
+</pre>
+
+FFXIV 1.0 quests grant no titles and cannot be repeated. The template therefore
+omits Title Granted and Repeatable rows.
+</noinclude>

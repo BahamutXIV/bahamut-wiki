@@ -1,0 +1,20 @@
+<includeonly>{| class="navbox"
+|-
+! class="navbox-title" colspan="2" | Eorzea
+|-
+! class="navbox-group" | City-States
+| class="navbox-list" | <ul><li>[[Ul'dah]]</li><li>[[Gridania]]</li><li>[[Limsa Lominsa]]</li></ul>
+|-
+! class="navbox-group" | Regions
+| class="navbox-list" | <ul><li>[[Thanalan]]</li><li>[[The Black Shroud]]</li><li>[[La Noscea]]</li><li>[[Coerthas]]</li><li>[[Mor Dhona]]</li></ul>
+|-
+! class="navbox-group" | Browse
+| class="navbox-list" | <ul><li>[[:Category:Zones|Zones]]</li><li>[[:Category:Landmarks|Landmarks and camps]]</li></ul>
+|}</includeonly><noinclude>
+== Usage ==
+
+This box links Eorzea's city-states and regions, plus the zone and landmark
+indexes. Place <code><nowiki>{{Regions}}</nowiki></code> at the end of each
+city-state, region, zone, camp, or landmark page, above its categories. Put
+links to nearby places and the containing area in the article text.
+</noinclude>

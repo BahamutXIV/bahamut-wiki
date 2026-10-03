@@ -1,0 +1,58 @@
+<includeonly>{| class="infobox-card infobox-status-effect"
+{{#if:{{{icon|}}}|{{!}}-
+{{!}} colspan="2" class="infobox-card-icon" {{!}} [[File:XIVL_{{{icon}}}.png|40px|link=|{{PAGENAME}}]]}}
+|-
+{{#if:{{{type|}}}|
+!class="infobox-card-header"{{!}} Type
+{{!}}class="infobox-card-field"{{!}} {{{type}}}}}
+|-
+{{#if:{{{duration|}}}|
+!class="infobox-card-header"{{!}} Duration
+{{!}}class="infobox-card-field"{{!}} {{{duration}}}}}
+|-
+{{#if:{{{actions|}}}|
+!class="infobox-card-header"{{!}} Granted by
+{{!}}class="infobox-card-field"{{!}} {{{actions}}}}}
+|-
+{{#if:{{{items|}}}|
+!class="infobox-card-header"{{!}} From items
+{{!}}class="infobox-card-field"{{!}} {{{items}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Place this infobox at the start of a status effect page for a buff or debuff
+affecting a character or monster. All fields are optional, and blank fields
+hide their rows. It matches [[Template:Action]], [[Template:Item]], and
+[[Template:Mob]].
+
+<pre>
+{{Status Effect
+| icon =
+| type =
+| duration =
+| actions =
+| items =
+}}
+</pre>
+
+<code>icon</code> is the effect's client icon ID. It selects the uploaded image
+<code>File:XIVL_&lt;id&gt;.png</code>. Status icons are small, so they display at
+40px rather than the 64px used for action icons.
+
+<code>type</code> is Beneficial or Detrimental. Follow the game's wording: an
+effect it <em>grants</em> is beneficial, while one it <em>inflicts</em> is
+detrimental.
+
+Include the unit in <code>duration</code>, such as "30 seconds" or "10 minutes".
+Leave it blank for an effect that lasts until removed.
+
+<code>actions</code> and <code>items</code> list what applies the effect. The
+client tables do not record these relationships. Use the 1.x reference when
+it identifies a source; otherwise leave the fields blank.
+
+== Page titles ==
+
+Name every status effect page <code>&lt;name&gt; (Status Effect)</code>, even
+when no other page shares its name. Use the same title in links.
+</noinclude>

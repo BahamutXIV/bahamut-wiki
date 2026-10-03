@@ -1,0 +1,6 @@
+target-version = "py312"
+
+[lint]
+select = ["E", "F"]
+# Ruff's formatter owns wrapping.
+ignore = ["E501"]

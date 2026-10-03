@@ -1,0 +1,83 @@
+<includeonly>{| class="infobox-card infobox-mob"
+|-
+{{#if:{{{family|}}}|
+!class="infobox-card-header"{{!}} Family
+{{!}}class="infobox-card-field"{{!}} {{{family}}}}}
+|-
+{{#if:{{{type|}}}|
+!class="infobox-card-header"{{!}} Type
+{{!}}class="infobox-card-field"{{!}} {{{type}}}}}
+|-
+{{#if:{{{job|}}}|
+!class="infobox-card-header"{{!}} Job
+{{!}}class="infobox-card-field"{{!}} {{{job}}}}}
+|-
+{{#if:{{{gender|}}}|
+!class="infobox-card-header"{{!}} Gender
+{{!}}class="infobox-card-field"{{!}} {{{gender}}}}}
+|-
+{{#if:{{{element|}}}|
+!class="infobox-card-header"{{!}} Element
+{{!}}class="infobox-card-field"{{!}} {{{element}}}}}
+|-
+{{#if:{{{weakness|}}}|
+!class="infobox-card-header"{{!}} Weak To
+{{!}}class="infobox-card-field"{{!}} {{{weakness}}}}}
+|-
+{{#if:{{{level|}}}|
+!class="infobox-card-header"{{!}} Level
+{{!}}class="infobox-card-field"{{!}} {{{level}}}}}
+|-
+{{#if:{{{hp|}}}|
+!class="infobox-card-header"{{!}} HP
+{{!}}class="infobox-card-field"{{!}} {{{hp}}}}}
+|-
+{{#if:{{{mp|}}}|
+!class="infobox-card-header"{{!}} MP
+{{!}}class="infobox-card-field"{{!}} {{{mp}}}}}
+|-
+{{#if:{{{aggressive|}}}|
+!class="infobox-card-header"{{!}} Aggressive
+{{!}}class="infobox-card-field"{{!}} {{{aggressive}}}}}
+|-
+{{#if:{{{notorious|}}}|
+!class="infobox-card-header"{{!}} Notorious Monster
+{{!}}class="infobox-card-field"{{!}} {{{notorious}}}}}
+|-
+{{#if:{{{harvest|}}}|
+!class="infobox-card-header"{{!}} Harvest
+{{!}}class="infobox-card-field"{{!}} {{{harvest}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Place this infobox at the start of a monster page. All fields are optional,
+and blank fields hide their rows.
+
+<pre>
+{{Mob
+| family =
+| type =
+| job =
+| gender =
+| element =
+| weakness =
+| level =
+| hp =
+| mp =
+| aggressive =
+| notorious =
+| harvest =
+}}
+</pre>
+
+Blank values mean unknown, not zero. HP and MP are recorded for only some
+monsters. Write <code>family</code> from family to subfamily to subspecies,
+separating each with a slash.
+
+Use <code>harvest</code> only to note an exception: 1.x monsters yield elemental
+shards and crystals on defeat unless stated otherwise.
+
+Put sightings by zone in a <code>== Locations ==</code> section below the
+infobox. The locations table is separate from this template.
+</noinclude>

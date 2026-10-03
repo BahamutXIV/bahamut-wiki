@@ -1,0 +1,55 @@
+<includeonly>{| class="infobox-card"
+|-
+{{#if:{{{type|}}}|
+!class="infobox-card-header"{{!}} Type
+{{!}}class="infobox-card-field"{{!}} {{{type}}}}}
+|-
+{{#if:{{{rank|}}}|
+!class="infobox-card-header"{{!}} Rank
+{{!}}class="infobox-card-field"{{!}} {{{rank}}}}}
+|-
+{{#if:{{{aspect|}}}|
+!class="infobox-card-header"{{!}} Aspect
+{{!}}class="infobox-card-field"{{!}} {{{aspect}}}}}
+|-
+{{#if:{{{location|}}}|
+!class="infobox-card-header"{{!}} Starts at
+{{!}}class="infobox-card-field"{{!}} {{{location}}}}}
+|-
+{{#if:{{{authority|}}}|
+!class="infobox-card-header"{{!}} Issued by
+{{!}}class="infobox-card-field"{{!}} {{{authority}}}}}
+|-
+{{#if:{{{issuer|}}}|
+!class="infobox-card-header"{{!}} Issuing NPC
+{{!}}class="infobox-card-field"{{!}} {{{issuer}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Use this infobox at the start of a levequest page. All fields are optional,
+and blank fields hide their rows. It matches [[Template:Action]],
+[[Template:Item]], [[Template:Mob]], and [[Template:Status Effect]].
+
+<pre>
+{{Levequest
+| type =
+| rank =
+| aspect =
+| location =
+| authority =
+| issuer =
+}}
+</pre>
+
+* <code>type</code>: Battlecraft, Fieldcraft, Faction, or Grand Company, determined by the leve's ID band in the client's guildleve table.
+* <code>rank</code>: the rank at which the leve is offered.
+* <code>location</code>: the aetherial gate where the levequest starts.
+* <code>authority</code>: the Adventurers' Guild that issues the leve.
+* <code>issuer</code>: the NPC at that guild's leve counter.
+
+<code>aspect</code> names the guardian's virtue associated with the guildleve,
+such as Valor, Piety, Tenacity, or Munificence. The client sheets do not name
+it. Use the 1.x reference when it supplies a name; otherwise leave the field
+blank.
+</noinclude>

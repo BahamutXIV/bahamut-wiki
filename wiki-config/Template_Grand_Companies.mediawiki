@@ -1,0 +1,16 @@
+<includeonly>{| class="navbox"
+|-
+| class="navbox-title" | [[:Category:Grand Company|Grand Companies]]
+|-
+! class="navbox-group" | Companies
+| class="navbox-list" | <ul><li>[[The Maelstrom]]</li><li>[[Order of the Twin Adder]]</li><li>[[Immortal Flames]]</li></ul>
+|-
+! class="navbox-group" | See also
+| class="navbox-list" | <ul><li>[[:Category:Grand Company Quests|Grand Company Quests]]</li></ul>
+|}</includeonly><noinclude>
+== Usage ==
+
+This box links the three Grand Companies. Add
+<code><nowiki>{{Grand Companies}}</nowiki></code> at the end of each Grand
+Company page, above its categories.
+</noinclude>

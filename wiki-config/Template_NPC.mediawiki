@@ -1,0 +1,66 @@
+<includeonly>{| class="infobox-card"
+|-
+{{#if:{{{race|}}}|
+!class="infobox-card-header"{{!}} Race
+{{!}}class="infobox-card-field"{{!}} {{{race}}}}}
+|-
+{{#if:{{{clan|}}}|
+!class="infobox-card-header"{{!}} Clan
+{{!}}class="infobox-card-field"{{!}} {{{clan}}}}}
+|-
+{{#if:{{{gender|}}}|
+!class="infobox-card-header"{{!}} Gender
+{{!}}class="infobox-card-field"{{!}} {{{gender}}}}}
+|-
+{{#if:{{{affiliation|}}}|
+!class="infobox-card-header"{{!}} Affiliation
+{{!}}class="infobox-card-field"{{!}} {{{affiliation}}}}}
+|-
+{{#if:{{{occupation|}}}|
+!class="infobox-card-header"{{!}} Occupation
+{{!}}class="infobox-card-field"{{!}} {{{occupation}}}}}
+|-
+{{#if:{{{zone|}}}|
+!class="infobox-card-header"{{!}} Zone
+{{!}}class="infobox-card-field"{{!}} {{{zone}}}}}
+|-
+{{#if:{{{location|}}}|
+!class="infobox-card-header"{{!}} Location
+{{!}}class="infobox-card-field"{{!}} {{{location}}}}}
+|-
+{{#if:{{{coordinates|}}}|
+!class="infobox-card-header"{{!}} Coordinates
+{{!}}class="infobox-card-field"{{!}} {{{coordinates}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Use this infobox at the start of an NPC page. All fields are optional, and
+blank fields hide their rows. Its style matches [[Template:Item]],
+[[Template:Mob]], [[Template:Action]], [[Template:Status Effect]], and
+[[Template:Levequest]].
+
+<pre>
+{{NPC
+| race =
+| clan =
+| gender =
+| affiliation =
+| occupation =
+| zone =
+| location =
+| coordinates =
+}}
+</pre>
+
+Use the names from [[:Category:Races|Races]] for <code>race</code> and
+<code>clan</code>. NPCs that belong to beast tribes or are creatures have a
+race but no clan.
+
+<code>affiliation</code> names the city-state or nation the NPC serves.
+<code>occupation</code> gives their role, if known.
+
+<code>zone</code>, <code>location</code>, and <code>coordinates</code> describe
+where the NPC is found. Link the zone only if its page exists. Use plain text
+for a smaller area without a page.
+</noinclude>

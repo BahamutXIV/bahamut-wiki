@@ -1,0 +1,651 @@
+/* Bahamut styles for templates and wiki pages.
+ * .wikitable / .standard: MediaWiki tables.
+ * .infobox-*: template summary cards.
+ * .site-* / .portal-*: Main Page banner and grouped links.
+ * .navbox: navigation at the end of an article.
+ * Dark mode supports MediaWiki's forced-night setting and automatic OS
+ * preference, with mw-theme-dark as a legacy fallback.
+ * Keep custom classes tied to markup used by the wiki.
+ */
+
+/* === Base === */
+
+body.page-Main_Page h1.firstHeading { display: none; }
+
+table { text-size-adjust: none; }
+
+/* === Standard wikitable polish === */
+
+table.wikitable,
+table.standard {
+  margin: 1em 0;
+  border-collapse: collapse;
+  border: 1px solid #c9d7e6;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+table.wikitable th,
+table.wikitable td,
+table.standard th,
+table.standard td {
+  border: 1px solid #c9d7e6;
+  padding: 0.3em 0.5em;
+}
+
+table.wikitable th,
+table.standard th {
+  background: #2a4865;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+table.wikitable th a:link,
+table.wikitable th a:visited,
+table.standard th a:link,
+table.standard th a:visited {
+  color: #cfe6ff;
+  text-decoration: none;
+}
+
+/* Alternating table rows. */
+table.altrow-blue tr:nth-child(even) { background: #e4f4fb; }
+
+/* === Content tables === */
+
+table.xiv-table {
+  border-spacing: 2px;
+  border-collapse: separate;
+  margin: 0.5em 0;
+}
+table.xiv-table th,
+table.xiv-table td {
+  padding: 4px 6px;
+}
+/* Keep tables below floated infoboxes. Size ordinary tables to their content
+ * so short values and prose do not stretch across wide screens. Wide tables,
+ * such as monster locations, can still fill the article column.
+ */
+.wide-table { width: auto; max-width: 100%; clear: left; }
+
+/* Default row and header backgrounds. */
+table.xiv-table tr { background-color: #f0f6fc; color: #0f172a; }
+
+table.xiv-table th,
+table tr.bg-header,
+.bg-header tr,
+.bg-header { background-color: #dce8f4; color: #0f172a; }
+
+/* Dark-mode content tables. */
+:root.skin-theme-clientpref-night table.xiv-table tr,
+body.mw-theme-dark table.xiv-table tr { background-color: #1f2937 !important; color: #e5e7eb !important; }
+
+:root.skin-theme-clientpref-night table.xiv-table th,
+:root.skin-theme-clientpref-night table tr.bg-header,
+:root.skin-theme-clientpref-night .bg-header,
+body.mw-theme-dark table.xiv-table th,
+body.mw-theme-dark table tr.bg-header,
+body.mw-theme-dark .bg-header { background-color: #263445 !important; color: #e5e7eb !important; }
+
+/* Template:Quest uses infobox-quest for its summary and quest navigation.
+ * The summary puts infobox-quest-header / infobox-quest-field on cells;
+ * navigation puts them on rows. These selectors support both forms.
+ */
+
+/* Size the summary and quest navigation to their longest row. */
+.quest-summary {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.quest-summary table.infobox-quest { width: 100%; }
+
+table.infobox-quest {
+  margin: 0 0 1em 0;
+  border: 1px solid #2a4865;
+  border-collapse: collapse;
+  background: #f0f6fc;
+  color: #0f172a;
+  width: fit-content;
+  max-width: 34em;
+  font-size: 0.95em;
+}
+
+table.infobox-quest th.infobox-quest-header,
+table.infobox-quest td.infobox-quest-field,
+table.infobox-quest tr.infobox-quest-header > th,
+table.infobox-quest tr.infobox-quest-header > td,
+table.infobox-quest tr.infobox-quest-field > th,
+table.infobox-quest tr.infobox-quest-field > td {
+  padding: 4px 10px;
+  vertical-align: top;
+  border-top: 1px solid #c9d7e6;
+}
+
+table.infobox-quest tr:first-child th.infobox-quest-header,
+table.infobox-quest tr:first-child td.infobox-quest-field,
+table.infobox-quest tr:first-child > th,
+table.infobox-quest tr:first-child > td {
+  border-top: none;
+}
+
+table.infobox-quest th.infobox-quest-header {
+  background: #dce8f4;
+  color: #0f172a;
+  text-align: left;
+}
+
+table.infobox-quest tr.infobox-quest-header > th,
+table.infobox-quest tr.infobox-quest-header > td {
+  background: #2a4865;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+table.infobox-quest th.infobox-quest-header a:link,
+table.infobox-quest th.infobox-quest-header a:visited { color: #2a4865; }
+
+table.infobox-quest tr.infobox-quest-header > th a:link,
+table.infobox-quest tr.infobox-quest-header > th a:visited,
+table.infobox-quest tr.infobox-quest-header > td a:link,
+table.infobox-quest tr.infobox-quest-header > td a:visited {
+  color: #cfe6ff;
+}
+
+/* Template:Item and Template:Mob use infobox-card-header / infobox-card-field
+ * on cells within infobox-card tables. Keep these label/value tables separate from quest selectors,
+ * which also handle classes on rows.
+ */
+
+/* Size cards to their content and wrap long values at max-width. The left
+ * float lets article text sit beside the card; .wide-table clears it.
+ */
+table.infobox-card {
+  float: left;
+  clear: left;
+  margin: 0 1.5em 1em 0;
+  border: 1px solid #2a4865;
+  border-collapse: collapse;
+  background: #f0f6fc;
+  color: #0f172a;
+  width: auto;
+  max-width: 30em;
+  font-size: 0.95em;
+}
+
+/* Start sections below the summary on articles built around tables. */
+.mw-parser-output:has(.infobox-mob, .infobox-attribute) > .mw-heading2,
+.mw-parser-output:has(.infobox-mob, .infobox-attribute) > h2 {
+  clear: left;
+}
+
+/* Stack the card and article text when the column is too narrow for both. */
+@media (max-width: 800px) {
+  table.infobox-card,
+  table.infobox-quest {
+    float: none;
+    margin: 0 0 1em 0;
+    max-width: 100%;
+  }
+
+  /* Let wide tables scroll on narrow screens without squeezing cell text.
+   * Apply display: block only here; elsewhere it prevents a table from filling
+   * its container.
+   */
+  table.xiv-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  /* Minerva otherwise gives a block table a full-width empty gutter. */
+  body.skin-minerva table.infobox-card,
+  body.skin-minerva table.infobox-quest {
+    display: table;
+    width: auto;
+  }
+
+  body.skin-minerva .quest-summary table.infobox-quest { width: 100%; }
+
+  /* Wide lists retain readable cells and scroll inside the article. */
+  table.xiv-table.wide-table tbody { min-width: 34em; display: table; }
+}
+
+table.infobox-card th.infobox-card-header,
+table.infobox-card td.infobox-card-field {
+  padding: 2px 8px;
+  vertical-align: top;
+  border-top: 1px solid #c9d7e6;
+}
+
+table.infobox-card tr:first-child th.infobox-card-header,
+table.infobox-card tr:first-child td.infobox-card-field {
+  border-top: none;
+}
+
+table.infobox-card th.infobox-card-header {
+  background: #dce8f4;
+  color: #0f172a;
+  text-align: left;
+  font-weight: bold;
+  /* Fit the label column to its longest label, avoiding gaps before values. */
+  white-space: nowrap;
+}
+
+table.infobox-card th.infobox-card-header a:link,
+table.infobox-card th.infobox-card-header a:visited {
+  color: #2a4865;
+}
+
+/* Center the icon across both columns. Source icons are 64px, with a few at
+ * 128px; a fixed height keeps the cards consistent.
+ */
+table.infobox-card td.infobox-card-icon {
+  padding: 6px;
+  text-align: center;
+  background: #dce8f4;
+  border-top: none;
+}
+
+table.infobox-card td.infobox-card-icon img {
+  height: 64px;
+  width: auto;
+}
+
+table.infobox-status-effect td.infobox-card-icon img {
+  height: 40px;
+}
+
+/* === Main Page banner === */
+
+.site-banner {
+  border: 1px solid #24384d;
+  background: #edf4fb;
+  color: #0f172a;
+  padding: 1.5em;
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+
+.site-banner-title {
+  font-size: 230%;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+.site-banner-tagline {
+  margin-top: 0.5em;
+  font-size: 110%;
+}
+
+/* Main Page panels contain labeled groups of links and wrap with the page. */
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  align-items: start;
+  margin: 1em 0;
+}
+
+.portal-col {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #c9d7e6;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.portal-col-title {
+  background: linear-gradient(to bottom, #3a5f85, #24384d);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.02em;
+  letter-spacing: 0.02em;
+  padding: 0.35em 0.7em;
+}
+
+.portal-group { padding: 0.4em 0.7em; }
+.portal-group + .portal-group { border-top: 1px solid #eef2f7; }
+
+.portal-group-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.86em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #5a7794;
+  margin-bottom: 0.1em;
+}
+
+/* Linked group labels keep the header color and reveal the link on hover. */
+.portal-group-label a,
+.portal-group-label a:visited { color: inherit; }
+.portal-group-label a:hover { text-decoration: underline; }
+
+/* Separate inline links with middots instead of list bullets. */
+.portal-links ul { margin: 0; padding: 0; list-style: none; display: inline; }
+.portal-links li { display: inline; }
+.portal-links li:not(:last-child)::after {
+  content: " \00b7 ";
+  color: #94a3b8;
+}
+
+/* Topic templates use MediaWiki's .navbox markup. Shared styles keep these
+ * navigation bars consistent wherever a template is included.
+ */
+
+.navbox {
+  box-sizing: border-box;
+  width: 100%;
+  clear: both;
+  margin: 1em 0 0;
+  border: 1px solid #c9d7e6;
+  border-collapse: collapse;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 0.9em;
+  text-align: center;
+}
+.navbox + .navbox { margin-top: -1px; }
+
+.navbox-title {
+  background: #2a4865;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.3em 1em;
+}
+.navbox-title a:link,
+.navbox-title a:visited { color: #cfe6ff; }
+
+.navbox-group {
+  background: #dbe6f2;
+  color: #0f172a;
+  font-weight: bold;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0.3em 0.75em;
+  width: 1%;
+}
+
+.navbox-list {
+  text-align: left;
+  vertical-align: middle;
+  padding: 0.3em 0.6em;
+}
+.navbox-list ul { margin: 0; padding: 0; list-style: none; }
+.navbox-list li { display: inline; }
+.navbox-list li:not(:last-child)::after {
+  content: " \00b7 ";
+  color: #94a3b8;
+}
+
+/* === Utilities === */
+
+/* Constrain images without requiring a wrapper class. The more specific
+ * infobox icon rule keeps its own height.
+ */
+.mw-parser-output img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === Dark mode === */
+
+:root.skin-theme-clientpref-night table th.infobox-card-header a:any-link,
+:root.skin-theme-clientpref-night table th.infobox-quest-header a:any-link,
+body.mw-theme-dark table th.infobox-card-header a:any-link,
+body.mw-theme-dark table th.infobox-quest-header a:any-link { color: #cfe6ff; }
+
+:root.skin-theme-clientpref-night table.wikitable,
+body.mw-theme-dark table.wikitable,
+:root.skin-theme-clientpref-night table.standard,
+body.mw-theme-dark table.standard {
+  background: #1f2937;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night table.wikitable th,
+:root.skin-theme-clientpref-night table.wikitable td,
+:root.skin-theme-clientpref-night table.standard th,
+:root.skin-theme-clientpref-night table.standard td,
+body.mw-theme-dark table.wikitable th,
+body.mw-theme-dark table.wikitable td,
+body.mw-theme-dark table.standard th,
+body.mw-theme-dark table.standard td {
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night table.wikitable th,
+:root.skin-theme-clientpref-night table.standard th,
+body.mw-theme-dark table.wikitable th,
+body.mw-theme-dark table.standard th {
+  background: #1e293b;
+}
+
+:root.skin-theme-clientpref-night table.infobox-quest,
+body.mw-theme-dark table.infobox-quest {
+  background: #1f2937;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night table.infobox-quest th.infobox-quest-header,
+:root.skin-theme-clientpref-night table.infobox-quest tr.infobox-quest-header > th,
+:root.skin-theme-clientpref-night table.infobox-quest tr.infobox-quest-header > td,
+body.mw-theme-dark table.infobox-quest th.infobox-quest-header,
+body.mw-theme-dark table.infobox-quest tr.infobox-quest-header > th,
+body.mw-theme-dark table.infobox-quest tr.infobox-quest-header > td {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+:root.skin-theme-clientpref-night table.infobox-quest th.infobox-quest-header,
+:root.skin-theme-clientpref-night table.infobox-quest td.infobox-quest-field,
+:root.skin-theme-clientpref-night table.infobox-quest tr.infobox-quest-header > th,
+:root.skin-theme-clientpref-night table.infobox-quest tr.infobox-quest-header > td,
+:root.skin-theme-clientpref-night table.infobox-quest tr.infobox-quest-field > th,
+:root.skin-theme-clientpref-night table.infobox-quest tr.infobox-quest-field > td,
+body.mw-theme-dark table.infobox-quest th.infobox-quest-header,
+body.mw-theme-dark table.infobox-quest td.infobox-quest-field,
+body.mw-theme-dark table.infobox-quest tr.infobox-quest-header > th,
+body.mw-theme-dark table.infobox-quest tr.infobox-quest-header > td,
+body.mw-theme-dark table.infobox-quest tr.infobox-quest-field > th,
+body.mw-theme-dark table.infobox-quest tr.infobox-quest-field > td {
+  border-top-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night table.infobox-card,
+body.mw-theme-dark table.infobox-card {
+  background: #1f2937;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night table.infobox-card th.infobox-card-header,
+body.mw-theme-dark table.infobox-card th.infobox-card-header {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+:root.skin-theme-clientpref-night table.infobox-card th.infobox-card-header,
+:root.skin-theme-clientpref-night table.infobox-card td.infobox-card-field,
+body.mw-theme-dark table.infobox-card th.infobox-card-header,
+body.mw-theme-dark table.infobox-card td.infobox-card-field {
+  border-top-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night table.infobox-card td.infobox-card-icon,
+body.mw-theme-dark table.infobox-card td.infobox-card-icon {
+  background: #111827;
+}
+
+:root.skin-theme-clientpref-night .site-banner,
+body.mw-theme-dark .site-banner {
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night .portal-col,
+body.mw-theme-dark .portal-col {
+  background: #1f2937;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night .portal-col-title,
+body.mw-theme-dark .portal-col-title {
+  background: linear-gradient(to bottom, #2b3a4f, #1a2432);
+}
+
+/* Light-mode label gray lacks contrast on the dark panel. */
+:root.skin-theme-clientpref-night .portal-group-label,
+body.mw-theme-dark .portal-group-label {
+  color: #9ab3cc;
+}
+
+:root.skin-theme-clientpref-night .portal-group + .portal-group,
+body.mw-theme-dark .portal-group + .portal-group {
+  border-top-color: #374151;
+}
+
+:root.skin-theme-clientpref-night .navbox,
+body.mw-theme-dark .navbox {
+  background: #1f2937;
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+:root.skin-theme-clientpref-night .navbox-title,
+body.mw-theme-dark .navbox-title {
+  background: #1e293b;
+}
+
+:root.skin-theme-clientpref-night .navbox-group,
+body.mw-theme-dark .navbox-group {
+  background: #263445;
+  color: #e5e7eb;
+}
+
+/* Automatic appearance follows the OS without affecting forced day mode. */
+@media screen and (prefers-color-scheme: dark) {
+  :root.skin-theme-clientpref-os table th.infobox-card-header a:any-link,
+  :root.skin-theme-clientpref-os table th.infobox-quest-header a:any-link { color: #cfe6ff; }
+
+  :root.skin-theme-clientpref-os table.xiv-table tr {
+    background-color: #1f2937 !important;
+    color: #e5e7eb !important;
+  }
+
+  :root.skin-theme-clientpref-os table.xiv-table th,
+  :root.skin-theme-clientpref-os table tr.bg-header,
+  :root.skin-theme-clientpref-os .bg-header {
+    background-color: #263445 !important;
+    color: #e5e7eb !important;
+  }
+
+  :root.skin-theme-clientpref-os table.wikitable,
+  :root.skin-theme-clientpref-os table.standard {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os table.wikitable th,
+  :root.skin-theme-clientpref-os table.wikitable td,
+  :root.skin-theme-clientpref-os table.standard th,
+  :root.skin-theme-clientpref-os table.standard td {
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os table.wikitable th,
+  :root.skin-theme-clientpref-os table.standard th {
+    background: #1e293b;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-quest {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-quest th.infobox-quest-header,
+  :root.skin-theme-clientpref-os table.infobox-quest tr.infobox-quest-header > th,
+  :root.skin-theme-clientpref-os table.infobox-quest tr.infobox-quest-header > td {
+    background: #1e293b;
+    color: #ffffff;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-quest th.infobox-quest-header,
+  :root.skin-theme-clientpref-os table.infobox-quest td.infobox-quest-field,
+  :root.skin-theme-clientpref-os table.infobox-quest tr.infobox-quest-header > th,
+  :root.skin-theme-clientpref-os table.infobox-quest tr.infobox-quest-header > td,
+  :root.skin-theme-clientpref-os table.infobox-quest tr.infobox-quest-field > th,
+  :root.skin-theme-clientpref-os table.infobox-quest tr.infobox-quest-field > td {
+    border-top-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-card {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-card th.infobox-card-header {
+    background: #1e293b;
+    color: #ffffff;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-card th.infobox-card-header,
+  :root.skin-theme-clientpref-os table.infobox-card td.infobox-card-field {
+    border-top-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os table.infobox-card td.infobox-card-icon {
+    background: #111827;
+  }
+
+  :root.skin-theme-clientpref-os .site-banner {
+    background: #1e293b;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os .portal-col {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os .portal-col-title {
+    background: linear-gradient(to bottom, #2b3a4f, #1a2432);
+  }
+
+  :root.skin-theme-clientpref-os .portal-group-label {
+    color: #9ab3cc;
+  }
+
+  :root.skin-theme-clientpref-os .portal-group + .portal-group {
+    border-top-color: #374151;
+  }
+
+  :root.skin-theme-clientpref-os .navbox {
+    background: #1f2937;
+    color: #e5e7eb;
+    border-color: #4b5563;
+  }
+
+  :root.skin-theme-clientpref-os .navbox-title {
+    background: #1e293b;
+  }
+
+  :root.skin-theme-clientpref-os .navbox-group {
+    background: #263445;
+    color: #e5e7eb;
+  }
+}

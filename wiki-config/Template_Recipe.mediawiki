@@ -1,0 +1,67 @@
+<includeonly><table class="xiv-table" style="width:auto;">
+<tr class="bg-header">
+<th colspan="2">{{#if:{{{Name|}}}|{{{Name}}}|Recipe}}</th>
+</tr>
+<tr>
+<th style="width:8em;">Craft</th>
+<td>{{{Primary Skill|Unknown}}}{{#if:{{{Primary Skill Level|}}}|&#32;level {{#invoke:Recipe|level|{{{Primary Skill Level}}}}}}}{{#if:{{{Secondary Skill|}}}|, {{{Secondary Skill}}}{{#if:{{{Secondary Skill Level|}}}|&#32;level {{#invoke:Recipe|level|{{{Secondary Skill Level}}}}}}}}}{{#if:{{{Secondary Skill 2|}}}|, {{{Secondary Skill 2}}}{{#if:{{{Secondary Skill 2 Level|}}}|&#32;level {{#invoke:Recipe|level|{{{Secondary Skill 2 Level}}}}}}}}}</td>
+</tr>
+{{#if:{{{Crystal 1|}}}{{{Crystal 2|}}}|
+<tr>
+<th>Crystals</th>
+<td>{{#if:{{{Crystal 1|}}}|{{{Crystal 1 Amount|1}}} [[{{{Crystal 1}}}]]}}{{#if:{{{Crystal 2|}}}|{{#if:{{{Crystal 1|}}}|,&#32;}}{{{Crystal 2 Amount|1}}} [[{{{Crystal 2}}}]]}}</td>
+</tr>}}{{#if:{{{Ingredients|}}}|
+<tr>
+<th>Ingredients</th>
+<td>{{#invoke:Recipe|linkList|{{{Ingredients}}}}}</td>
+</tr>}}{{#if:{{{Main Hand NQ|}}}{{{Off Hand NQ|}}}|
+<tr>
+<th>Yields</th>
+<td>{{#invoke:Recipe|linkEach|{{{Main Hand NQ|}}}|{{{Off Hand NQ|}}}}}</td>
+</tr>}}{{#if:{{{Main Hand HQ+1|}}}{{{Main Hand HQ+2|}}}{{{Main Hand HQ+3|}}}{{{Off Hand HQ+1|}}}{{{Off Hand HQ+2|}}}{{{Off Hand HQ+3|}}}|
+<tr>
+<th>High quality</th>
+<td>{{#invoke:Recipe|linkEach|{{{Main Hand HQ+1|}}}|{{{Main Hand HQ+2|}}}|{{{Main Hand HQ+3|}}}|{{{Off Hand HQ+1|}}}|{{{Off Hand HQ+2|}}}|{{{Off Hand HQ+3|}}}}}</td>
+</tr>}}{{#if:{{{Training 1|}}}{{{Training 2|}}}|
+<tr>
+<th>Training</th>
+<td>{{{Training 1|}}}{{#if:{{{Training 2|}}}|{{#if:{{{Training 1|}}}|,&#32;}}{{{Training 2}}}}}</td>
+</tr>}}{{#if:{{{Guild Facilities|}}}{{{Simple Facilities|}}}|
+<tr>
+<th>Facilities</th>
+<td>{{#if:{{{Guild Facilities|}}}|Guild facilities recommended}}{{#if:{{{Simple Facilities|}}}|{{#if:{{{Guild Facilities|}}}|, }}Simple facilities sufficient}}</td>
+</tr>}}
+</table>
+</includeonly><noinclude>
+== Usage ==
+
+This template displays one crafting recipe.
+
+<pre>
+{{Recipe
+| Name = Aeolian Scimitar
+| Primary Skill = Blacksmithing
+| Primary Skill Level = 50
+| Crystal 1 = Earth Shard
+| Crystal 1 Amount = 12
+| Crystal 2 = Fire Shard
+| Crystal 2 Amount = 13
+| Ingredients = Blunt Aeolian Scimitar, Aldgoat Leather, Brass Ingot, Brimstone
+| Main Hand NQ = Aeolian Scimitar
+| Off Hand NQ = Aeolian Scimitar
+}}
+</pre>
+
+The Craft row always appears. It shows <code>Unknown</code> when
+<code>Primary Skill</code> is omitted. Other rows appear only when filled in.
+
+Optional fields include:
+
+* <code>Secondary Skill</code> and <code>Secondary Skill 2</code>, with their corresponding <code>Level</code> fields.
+* <code>Main Hand HQ+1</code> through <code>HQ+3</code>, and the <code>Off Hand</code> equivalents.
+* <code>Training 1</code> and <code>Training 2</code>.
+* <code>Guild Facilities</code> and <code>Simple Facilities</code> flags.
+
+[[Module:Recipe]] splits ingredients at commas and preserves their order and
+repeats. List an ingredient twice when the recipe needs two of it.
+</noinclude>

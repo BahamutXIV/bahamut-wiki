@@ -1,0 +1,164 @@
+<includeonly>{| class="infobox-card"
+{{#if:{{{icon|}}}|{{!}}-
+{{!}} colspan="2" class="infobox-card-icon" {{!}} [[File:XIVL_{{{icon}}}.png|64px|link=|{{PAGENAME}}]]}}
+|-
+{{#if:{{{category|}}}|
+!class="infobox-card-header"{{!}} Category
+{{!}}class="infobox-card-field"{{!}} {{{category}}}}}
+|-
+{{#if:{{{level|}}}|
+!class="infobox-card-header"{{!}} Level
+{{!}}class="infobox-card-field"{{!}} {{{level}}}}}
+|-
+{{#if:{{{optimal|}}}|
+!class="infobox-card-header"{{!}} Optimal Level
+{{!}}class="infobox-card-field"{{!}} {{{optimal}}}}}
+|-
+{{#if:{{{classes|}}}|
+!class="infobox-card-header"{{!}} Classes
+{{!}}class="infobox-card-field"{{!}} {{{classes}}}}}
+|-
+{{#if:{{{restrictions|}}}|
+!class="infobox-card-header"{{!}} Restrictions
+{{!}}class="infobox-card-field"{{!}} {{{restrictions}}}}}
+|-
+{{#if:{{{damage|}}}|
+!class="infobox-card-header"{{!}} Damage
+{{!}}class="infobox-card-field"{{!}} {{{damage}}}}}
+|-
+{{#if:{{{delay|}}}|
+!class="infobox-card-header"{{!}} Delay
+{{!}}class="infobox-card-field"{{!}} {{{delay}}} seconds}}
+|-
+{{#if:{{{attacktype|}}}|
+!class="infobox-card-header"{{!}} Attack Type
+{{!}}class="infobox-card-field"{{!}} {{{attacktype}}}}}
+|-
+{{#if:{{{defense|}}}|
+!class="infobox-card-header"{{!}} Defense
+{{!}}class="infobox-card-field"{{!}} {{{defense}}}}}
+|-
+{{#if:{{{magicdefense|}}}|
+!class="infobox-card-header"{{!}} Magic Defense
+{{!}}class="infobox-card-field"{{!}} {{{magicdefense}}}}}
+|-
+{{#if:{{{attributes|}}}|
+!class="infobox-card-header"{{!}} Attributes
+{{!}}class="infobox-card-field"{{!}} {{{attributes}}}}}
+|-
+{{#if:{{{hq|}}}|
+!class="infobox-card-header"{{!}} High Quality
+{{!}}class="infobox-card-field"{{!}} {{{hq}}}}}
+|-
+{{#if:{{{recast|}}}|
+!class="infobox-card-header"{{!}} Recast
+{{!}}class="infobox-card-field"{{!}} {{{recast}}} seconds}}
+|-
+{{#if:{{{duration|}}}|
+!class="infobox-card-header"{{!}} Duration
+{{!}}class="infobox-card-field"{{!}} {{{duration}}} seconds}}
+|-
+{{#if:{{{effect|}}}|
+!class="infobox-card-header"{{!}} Effect
+{{!}}class="infobox-card-field"{{!}} {{{effect}}}}}
+|-
+{{#if:{{{repair|}}}|
+!class="infobox-card-header"{{!}} Repaired By
+{{!}}class="infobox-card-field"{{!}} {{{repair}}}}}
+|-
+{{#if:{{{material|}}}|
+!class="infobox-card-header"{{!}} Material
+{{!}}class="infobox-card-field"{{!}} {{{material}}}}}
+|-
+{{#if:{{{baseitem|}}}|
+!class="infobox-card-header"{{!}} Base Item
+{{!}}class="infobox-card-field"{{!}} {{{baseitem}}}}}
+|-
+{{#if:{{{dyes|}}}|
+!class="infobox-card-header"{{!}} Dyes
+{{!}}class="infobox-card-field"{{!}} {{{dyes}}}}}
+|-
+{{#if:{{{materia|}}}|
+!class="infobox-card-header"{{!}} Materia
+{{!}}class="infobox-card-field"{{!}} {{{materia}}}}}
+|-
+{{#if:{{{melds|}}}|
+!class="infobox-card-header"{{!}} Melds Into
+{{!}}class="infobox-card-field"{{!}} {{{melds}}}}}
+|-
+{{#if:{{{catalyst|}}}|
+!class="infobox-card-header"{{!}} Catalyst
+{{!}}class="infobox-card-field"{{!}} {{{catalyst}}}}}
+|-
+{{#if:{{{stack|}}}|
+!class="infobox-card-header"{{!}} Stack
+{{!}}class="infobox-card-field"{{!}} {{{stack}}}}}
+|-
+{{#if:{{{flags|}}}|
+!class="infobox-card-header"{{!}} Flags
+{{!}}class="infobox-card-field"{{!}} {{{flags}}}}}
+|-
+{{#if:{{{price|}}}|
+!class="infobox-card-header"{{!}} Resale Price
+{{!}}class="infobox-card-field"{{!}} {{{price}}} gil}}
+|-
+{{#if:{{{patch|}}}|
+!class="infobox-card-header"{{!}} Introduced
+{{!}}class="infobox-card-field"{{!}} Patch {{{patch}}}}}
+|}
+</includeonly><noinclude>
+== Usage ==
+
+Place this infobox at the start of an item page. All fields are optional.
+Blank fields hide their rows and mean unknown, not zero.
+
+<pre>
+{{Item
+| icon =
+| category =
+| level =
+| optimal =
+| classes =
+| restrictions =
+| damage =
+| delay =
+| attacktype =
+| defense =
+| magicdefense =
+| attributes =
+| hq =
+| recast =
+| duration =
+| effect =
+| repair =
+| material =
+| baseitem =
+| dyes =
+| materia =
+| melds =
+| catalyst =
+| stack =
+| flags =
+| price =
+| patch =
+}}
+</pre>
+
+<code>icon</code> is the item's client icon ID. It selects the uploaded image
+<code>File:XIVL_&lt;id&gt;.png</code>. <code>hq</code> describes the bonus from
+the high-quality version, including the attribute and amount, such as
+"Strength +5".
+
+Use <code>level</code> for a required level. Use <code>optimal</code> for gear
+that can be equipped at any level but reduces its stats to match the wearer's
+level. It provides its full stats only at the optimal level. An item uses one of
+these fields, never both.
+
+Enter only numbers for <code>delay</code>, <code>recast</code>, and
+<code>duration</code>. The template adds their units.
+
+For materia, <code>effect</code> describes the melded effect,
+<code>melds</code> lists compatible equipment slots, and <code>catalyst</code>
+names the catalyst it converts from. For gear, <code>materia</code> records
+whether the item can be melded and converted.
+</noinclude>

@@ -1,0 +1,56 @@
+-- Parse recipe values here so Template:Recipe handles only layout.
+
+local p = {}
+
+-- Preserve ingredient order and repeats: two entries mean two ingredients.
+function p.linkList( frame )
+	local raw = frame.args[1] or ''
+	local out = {}
+	for entry in string.gmatch( raw, '[^,]+' ) do
+		entry = mw.text.trim( entry )
+		-- Ingredient values may include italic markup; the markup is
+		-- presentation, not part of the page name.
+		entry = entry:gsub( "^''(.*)''$", '%1' )
+		if entry ~= '' then
+			out[ #out + 1 ] = '[[' .. entry .. ']]'
+		end
+	end
+	return table.concat( out, ', ' )
+end
+
+-- Results arrive separately for normal quality and each high-quality grade.
+-- Keep quantity and quality outside the item link: "Bronze Ingot x3" is three
+-- ingots from one synthesis. Each batch size has its own recipe entry.
+-- "Bronze Ingot +1" is a quality grade of the same item. The 1.23b
+-- client has no item names ending in "+N". Input uses "<name> +N xM", so remove
+-- quantity before quality when finding the base name.
+function p.linkEach( frame )
+	local out = {}
+	local seen = {}
+	for _, value in ipairs( frame.args ) do
+		value = mw.text.trim( value or '' )
+		value = value:gsub( "^''(.*)''$", '%1' )
+		if value ~= '' and not seen[ value ] then
+			seen[ value ] = true
+			local name = value
+			local rest, count = name:match( '^(.-)%s+[xX]%s*(%d+)$' )
+			if rest then name = rest end
+			local base, grade = name:match( '^(.-)%s*(%+%d)$' )
+			if base then name = base end
+			local link = '[[' .. name .. ']]'
+			if grade then link = link .. ' ' .. grade end
+			if count then link = count .. ' ' .. link end
+			out[ #out + 1 ] = link
+		end
+	end
+	return table.concat( out, ', ' )
+end
+
+-- Display levels without leading zeros, leaving stored recipe values unchanged.
+function p.level( frame )
+	local value = mw.text.trim( frame.args[1] or '' )
+	local trimmed = value:match( '^0*(%d+)$' )
+	return trimmed or value
+end
+
+return p
